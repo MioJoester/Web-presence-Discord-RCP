@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Discord Activity Sync",
+  "version": "1.0",
+  "description": "Shows your current Firefox tab as Discord activity.",
+  "permissions": [
+    "tabs",
+    "<all_urls>",
+    "http://localhost:3001/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "content_security_policy": "default-src 'self'; script-src 'self'; connect-src 'self' http://localhost:3001 http://127.0.0.1:3001;"
+}
