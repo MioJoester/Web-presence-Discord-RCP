@@ -45,5 +45,9 @@ steam
 6. Make sure to not use **capital letters, numbers, special character, extensions like .png/.jpg,** when naming icon in discord developer's portal
 7. make sure the Icon names in Discord matches with ```largeImageKey``` in server.js.
 
-##    
+## Preview 
+
+<img src="/Asset/Screenshot_20251120_100920_Gallery.jpg" />
+
+
 ---
