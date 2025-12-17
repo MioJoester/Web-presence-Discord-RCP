@@ -47,7 +47,7 @@ steam
 
 ## Preview 
 
-<img src="/Asset/Web-example.jpg" />
+<img src="/Asset/Web-example.jpg" height="200" / >
 
 Star and fork the repo if you liked this project :) 
 
