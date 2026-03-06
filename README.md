@@ -41,7 +41,7 @@ epicgames
 canva
 steam
 ```
-5. You can add/remove the websites icons yourslef, make sure to upload the server.js accordingly,
+5. You can add/remove the websites icons yourslef, make sure to update the server.js accordingly,
 6. Make sure to not use **capital letters, numbers, special character, extensions like .png/.jpg,** when naming icon in discord developer's portal
 7. make sure the Icon names in Discord matches with ```largeImageKey``` in server.js.
 
