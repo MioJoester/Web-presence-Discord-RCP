@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Discord Activity Sync</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 100px 32px 80px;
+    }
+
+    .label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .meta {
+      font-size: 12px;
+      color: #444;
+      margin-bottom: 56px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .tldr {
+      border: 1px solid #222;
+      border-left: 2px solid #fff;
+      padding: 20px 24px;
+      margin-bottom: 56px;
+    }
+
+    .tldr-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .tldr p {
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 14px;
+    }
+
+    p {
+      color: #888;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+
+    ul li {
+      font-size: 14px;
+      color: #888;
+      padding: 5px 0 5px 16px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #333;
+    }
+
+    .flow {
+      border: 1px solid #1a1a1a;
+      padding: 18px 22px;
+      margin-top: 18px;
+      color: #aaa;
+      line-height: 2;
+      font-size: 13px;
+      background: #050505;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+    }
+
+    a:hover {
+      border-color: #fff;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid #1a1a1a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #444;
+    }
+
+    footer a {
+      color: #444;
+      border: none;
+      margin-left: 20px;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <p class="label">Legal Document</p>
+
+  <h1>Privacy Policy</h1>
+
+  <p class="meta">
+    Last updated: May 2026 · Discord Activity Sync · By TaskStalker
+  </p>
+
+  <div class="tldr">
+
+    <div class="tldr-label">TL;DR</div>
+
+    <p>
+      Discord Activity Sync processes your active tab title and URL locally on your device
+      to display Discord Rich Presence activity. No data is transmitted to external servers,
+      collected, stored, tracked, sold, or monetized.
+    </p>
+
+  </div>
+
+  <section>
+
+    <h2>Overview</h2>
+
+    <p>
+      Discord Activity Sync is a Firefox browser extension developed by TaskStalker.
+      This Privacy Policy explains what information the extension accesses,
+      how it is processed, and how the companion desktop application
+      interacts with the Discord desktop client.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>Information Accessed</h2>
+
+    <p>The extension may access the following browser information:</p>
+
+    <ul>
+      <li>The URL of your currently active tab</li>
+      <li>The title of your currently active tab</li>
+      <li>Real-time title updates while remaining on the same page</li>
+      <li>Supported website metadata used for Rich Presence display</li>
+    </ul>
+
+    <p>
+      This information is used solely to display your current browsing activity
+      as Discord Rich Presence on your local Discord desktop client.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>How the System Works</h2>
+
+    <p>
+      The extension communicates only with a companion desktop application
+      running locally on your device through localhost:3031.
+    </p>
+
+    <p>
+      The companion desktop application then communicates with the Discord desktop client
+      using Discord’s local Rich Presence IPC interface.
+    </p>
+
+    <p>
+      This architecture is required because web browsers cannot directly access
+      Discord’s RPC interface.
+    </p>
+
+    <div class="flow">
+      Firefox Extension<br>
+      ↓<br>
+      localhost:3031<br>
+      ↓<br>
+      Companion Desktop App<br>
+      ↓<br>
+      Discord Desktop Client
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>How Your Data Is Used</h2>
+
+    <p>
+      The extension sends tab metadata as a local JSON payload
+      to the companion desktop application running on your machine.
+    </p>
+
+    <ul>
+      <li>All processing occurs entirely on the user's device</li>
+      <li>No information is transmitted to external servers</li>
+      <li>No cloud infrastructure or remote databases are used</li>
+      <li>No telemetry, analytics, or tracking systems exist</li>
+      <li>No browsing data is stored, logged, retained, or shared</li>
+      <li>No data is sold or monetized in any way</li>
+    </ul>
+
+    <p>
+      The companion desktop application only accepts localhost connections
+      and is not intended for remote or public network access.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>Data We Do Not Collect</h2>
+
+    <p>
+      TaskStalker does not collect, store, or have access to:
+    </p>
+
+    <ul>
+      <li>Browsing history</li>
+      <li>Passwords or form inputs</li>
+      <li>Cookies or authentication tokens</li>
+      <li>Discord account credentials</li>
+      <li>Personal information</li>
+      <li>Analytics or telemetry data</li>
+      <li>Usage statistics</li>
+    </ul>
+
+  </section>
+
+  <section>
+
+    <h2>Permissions Explained</h2>
+
+    <ul>
+      <li>
+        <strong style="color:#ccc">tabs</strong>
+        — Required to access the active tab title and URL
+      </li>
+
+      <li>
+        <strong style="color:#ccc">http://localhost:3031/*</strong>
+        — Required to communicate with the local companion desktop application
+      </li>
+    </ul>
+
+    <p>
+      No additional permissions are requested or used.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>Third-Party Services</h2>
+
+    <p>
+      The extension communicates only with the Discord desktop client
+      running on your local machine.
+    </p>
+
+    <p>
+      Discord’s own privacy policies apply to how Discord handles Rich Presence activity.
+      See <a href="https://discord.com/privacy" target="_blank">discord.com/privacy</a>.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>Children's Privacy</h2>
+
+    <p>
+      This extension is not directed toward children under the age of 13.
+      No information is knowingly collected from children.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>Changes to This Policy</h2>
+
+    <p>
+      This Privacy Policy may be updated periodically.
+      Changes will be reflected by the updated date at the top of this page.
+      Continued use of the extension constitutes acceptance of any revisions.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>Contact</h2>
+
+    <p>
+      For questions regarding this Privacy Policy or the extension,
+      please contact the developer through the Firefox Add-ons listing page.
+    </p>
+
+  </section>
+
+  <footer>
+
+    <span>Discord Activity Sync · TaskStalker</span>
+
+    <div>
+      <a href="terms.html">Terms</a>
+      <a href="..index.html">Home</a>
+    </div>
+
+  </footer>
+
+</div>
+
+</body>
+</html>
