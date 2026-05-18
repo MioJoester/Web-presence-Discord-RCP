@@ -11,7 +11,7 @@
 2. Install server dependencies, ```cd path/to/discord-rcp/fodler``` , ```npm install```.
 3. Go to https://discord.com/developers/applications and make a Discord app and get it's App id, use the App id in ```server.js```.
 4. Start a node js server with ```node server.js``` command in the discord-rcp folder .
-5. Load the ```manifest.json``` as a temporary add-on in firefox with ```about:debugging#/runtime/this-firefox```. make sure you open discord.
+5. Load the ```manifest.json``` as a temporary add-on in firefox with ```about:debugging#/runtime/this-firefox```. make sure you open discord desktop client.
 6. Change tabs on FireFox and your discord activity will update automatically
 
 ## Discord Application Setup (Required)
