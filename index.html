@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discord Activity Sync — Firefox Extension</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 100px 32px 80px;
+      text-align: center;
+    }
+
+    .label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .desc {
+      font-size: 15px;
+      color: #888;
+      font-weight: 300;
+      max-width: 520px;
+      margin: 0 auto 48px;
+    }
+
+    .btn {
+      display: inline-block;
+      border: 1px solid #fff;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 12px 32px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      margin: 6px;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    .btn-ghost {
+      border-color: #333;
+      color: #666;
+    }
+
+    .btn-ghost:hover {
+      background: #111;
+      color: #fff;
+      border-color: #555;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      margin: 64px 0;
+    }
+
+    h2 {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #444;
+      margin-bottom: 32px;
+    }
+
+    .steps {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .step {
+      display: flex;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid #111;
+    }
+
+    .step:last-child {
+      border-bottom: none;
+    }
+
+    .step-num {
+      font-size: 11px;
+      color: #444;
+      font-weight: 500;
+      min-width: 24px;
+      padding-top: 2px;
+    }
+
+    .step-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .note {
+      text-align: left;
+      border: 1px solid #1a1a1a;
+      padding: 24px;
+      background: #050505;
+    }
+
+    .note p {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .flow {
+      margin-top: 18px;
+      color: #999;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .features {
+      text-align: left;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .feature {
+      padding: 24px 0;
+      border-bottom: 1px solid #111;
+    }
+
+    .feature:nth-child(odd) {
+      padding-right: 24px;
+      border-right: 1px solid #111;
+    }
+
+    .feature:nth-child(even) {
+      padding-left: 24px;
+    }
+
+    .feature:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+
+    .feature-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .feature p {
+      font-size: 12px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid #1a1a1a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #444;
+    }
+
+    footer a {
+      color: #444;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 700px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .feature:nth-child(odd) {
+        padding-right: 0;
+        border-right: none;
+      }
+
+      .feature:nth-child(even) {
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <p class="label">Firefox Extension · Free</p>
+
+  <h1>Discord Activity Sync</h1>
+
+  <p class="desc">
+    Shows your current Firefox tab as a Discord Rich Presence activity.
+    Everything runs locally on your device — no external servers,
+    cloud infrastructure, analytics, or telemetry.
+  </p>
+
+  <div>
+    <a href="https://addons.mozilla.org" class="btn">Add to Firefox</a>
+    <a href="privacy-policy.html" class="btn btn-ghost">Privacy Policy</a>
+  </div>
+
+  <hr class="divider"/>
+
+  <h2>How it works</h2>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-num">01</div>
+      <div>
+        <div class="step-title">Extension watches your active tab</div>
+        <div class="step-desc">
+          The extension reads the title and URL of your currently active Firefox tab,
+          including real-time title updates on modern single-page applications.
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">02</div>
+      <div>
+        <div class="step-title">Sent to Companion Desktop App</div>
+        <div class="step-desc">
+          The extension securely sends tab metadata as a local JSON payload
+          to a lightweight companion desktop application running on localhost:3031.
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">03</div>
+      <div>
+        <div class="step-title">Displayed on Discord</div>
+        <div class="step-desc">
+          The companion desktop app communicates with the Discord desktop client
+          through Discord’s local Rich Presence IPC interface.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider"/>
+
+  <h2>Why a desktop app is required</h2>
+
+  <div class="note">
+
+    <p>
+      Modern browsers cannot directly establish Discord Rich Presence RPC connections
+      because Discord exposes its RPC interface only to local desktop applications.
+    </p>
+
+    <p>
+      To make Rich Presence possible, Discord Activity Sync uses a lightweight
+      companion desktop application that acts as a secure local bridge between
+      Firefox and the Discord desktop client.
+    </p>
+
+    <p>
+      The extension alone will not function without the companion desktop application.
+    </p>
+
+    <div class="flow">
+      Firefox Extension<br>
+      ↓<br>
+      localhost:3031<br>
+      ↓<br>
+      Companion Desktop App<br>
+      ↓<br>
+      Discord Desktop Client
+    </div>
+
+  </div>
+
+  <hr class="divider"/>
+
+  <h2>Features</h2>
+
+  <div class="features">
+
+    <div class="feature">
+      <div class="feature-title">Real-time title detection</div>
+      <p>Catches title changes instantly without needing to switch tabs.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-title">20+ supported sites</div>
+      <p>Displays matching Rich Presence assets for popular websites and services.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-title">Fully local processing</div>
+      <p>No remote servers, external APIs, telemetry systems, or cloud infrastructure.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-title">Auto reconnect</div>
+      <p>Automatically reconnects to Discord Rich Presence when Discord restarts.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-title">Background companion app</div>
+      <p>The lightweight desktop companion runs locally and bridges Firefox with Discord.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-title">Minimal permissions</div>
+      <p>Only requests access to browser tabs and localhost communication.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>Made by TaskStalker</span>
+
+    <div>
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
